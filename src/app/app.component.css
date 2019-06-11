@@ -1,0 +1,40 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body{
+	font: normal 16px Arial, Helvetica, sans-serif;
+}
+
+h1, h3{
+	font: normal 24px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+#main{
+
+  text-align: center;
+  width: 320px;
+  padding: 10px;
+  border: 1px solid gray;
+  margin: 0;
+  box-shadow: 2px 2px 5px grey;
+}
+.card{
+  min-width:30%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  height:50%;
+  margin:1rem;
+}
+
+
+
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}

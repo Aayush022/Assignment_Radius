@@ -1,21 +1,57 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- <router-outlet></router-outlet> -->
 
-<router-outlet></router-outlet>
+<h1 style="margin: 10%"></h1>
+<div style="height:auto; display:flex;justify-content:center;align-items:center;flex-wrap: wrap; flex-direction:row">
+  <div *ngFor="let final of finalData; let i = index" class="card">
+    <div id="main">
+      <img src={{final.url}} alt="No Image">
+      <div>Author: {{final.author}}</div>
+      <div>Comments: {{final.comment}}</div>
+      <div>Upvotes: {{final.upv}}</div>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" (click)="showData(i)" data-target="#myModal">Details</button>
+    </div>
+  </div>
+    <!-- <div class="row" style="border:solid green 2px;">
+    <tr *ngFor="let final of finalData; let i = index">
+  <div  id="main">
+
+           <div class="thumbnail">
+
+           <img src={{final.url}} alt="Card Thumbnail" style="padding: 0px; margin-top: 5px;">
+               <div class="caption">
+                 <h6>Author: {{final.author}}</h6>
+                 <h6>Comments: {{final.comment}}</h6>
+                 <h6>Upvotes: {{final.upv}}</h6>
+                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" (click)="showData(i)" data-target="#myModal">Details</button>
+
+             </div>
+           </div>
+
+         </div>
+        </tr>
+</div> -->
+</div>
+
+
+
+
+<div id="myModal" style="text-align:center;"class="modal fade" role="dialog" *ngIf="modalData">
+    <div class="modal-dialog modal-lg">
+        titletitle
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="text-align: left">By Reddit Author: {{modalData.author}}</h4>
+        </div>
+        <div class="modal-body">
+            <img src={{modalData.fullImage}} alt="No Image Available" style="height: 600px; width: 500px;position: center;">
+            <p style="font-size: 25px">{{modalData.title}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
